@@ -9,6 +9,5 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class HeaderComponent {
   constructor(public authService: AuthService) { }
 
-  isLogged: boolean = this.authService.checkIsLogged
-
+  get isLogged(): boolean { return this.authService.checkIsLogged }
 }

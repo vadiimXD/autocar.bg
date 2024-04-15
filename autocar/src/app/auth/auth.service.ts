@@ -29,7 +29,6 @@ export class AuthService {
 
   constructor(private router: Router, private http: HttpClient) { }
 
-
   registerHandler(registerForm: NgForm): void {
     debugger
     console.log(registerForm)
@@ -44,10 +43,12 @@ export class AuthService {
         localStorage.setItem("auth", JSON.stringify(data))
         this.router.navigate(['']);
         // this.toastService.showToast("Successfully registered!")
+        alert("success")
 
 
       } else {
         // this.errorMsgService.showError({ field: "Server", message: "Invalid email or password" })
+        alert("error")
       }
     });
   }
@@ -55,8 +56,30 @@ export class AuthService {
   logoutHandler(): void {
     localStorage.clear()
     this.router.navigate(['']);
+    alert("success")
     // this.toastService.showToast("Successfully logout!")
 
   }
 
+  loginHandler(loginForm: NgForm) {
+    debugger
+    if (loginForm.invalid) {
+      // this.errorMsgService.showError(errorHandler(loginForm))
+      alert("error from  form")
+      return
+    }
+
+    this.http.post<localUser>("http://localhost:1337/login", loginForm.value, {}).subscribe((data) => {
+      if (data) {
+        localStorage.setItem("auth", JSON.stringify(data))
+        this.router.navigate(['']);
+        // this.toastService.showToast("Successfully logged in!")
+        alert("success")
+
+      } else {
+        // this.errorMsgService.showError({ field: "Server", message: "Invalid email or password" })
+        alert("error")
+      }
+    });
+  }
 }
