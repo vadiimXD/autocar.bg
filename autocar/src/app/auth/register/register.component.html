@@ -1,42 +1,31 @@
 <section>
-    <form>
-        <div class="col-md-4">
-            <label for="validationDefaultUsername" class="form-label">Име</label>
-            <div class="input-group">
-                <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                <input type="text" class="form-control" id="validationDefaultUsername"
-                    aria-describedby="inputGroupPrepend2" required>
+    <div class="center">
+        <h1>Регистрация</h1>
+        <form>
+            <div class="txt_field">
+                <input type="text" required>
+                <span></span>
+                <label>Имейл</label>
             </div>
-        </div>
-
-        <div class="col-md-4">
-            <label for="validationDefaultUsername" class="form-label">Имейл</label>
-            <div class="input-group">
-                <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                <input type="text" class="form-control" id="validationDefaultUsername"
-                    aria-describedby="inputGroupPrepend2" required>
+            <div class="txt_field">
+                <input type="text" required>
+                <span></span>
+                <label>Потребителско име</label>
             </div>
-        </div>
-
-        <div class="col-md-4">
-            <label for="validationDefaultUsername" class="form-label">Парола</label>
-            <div class="input-group">
-                <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                <input type="text" class="form-control" id="validationDefaultUsername"
-                    aria-describedby="inputGroupPrepend2" required>
+            <div class="txt_field">
+                <input type="password" required>
+                <span></span>
+                <label>Парола</label>
             </div>
-        </div>
-
-        <div class="col-md-4">
-            <label for="validationDefaultUsername" class="form-label">Повторна парола</label>
-            <div class="input-group">
-                <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                <input type="text" class="form-control" id="validationDefaultUsername"
-                    aria-describedby="inputGroupPrepend2" required>
+            <div class="txt_field">
+                <input type="text" required>
+                <span></span>
+                <label>Повторна парола</label>
             </div>
-        </div>
-        <br>
-        <button type="submit" class="btn btn-warning">Register</button>
-    </form>
-
+            <input type="submit" value="Регистриране">
+            <div class="signup_link">
+                Регистрирани сте? <a routerLink="/login">Влизане</a>
+            </div>
+        </form>
+    </div>
 </section>
