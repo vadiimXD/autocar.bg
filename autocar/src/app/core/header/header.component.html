@@ -11,7 +11,7 @@
                     <a class="nav-link" aria-current="page" routerLink="">Начало</a>
                 </li>
 
-                <li class="nav-item">
+                <li *ngIf="isLogged" class="nav-item">
                     <a class="nav-link" routerLink="">Качване</a>
                 </li>
 
@@ -19,7 +19,7 @@
                     <a class="nav-link" routerLink="">Търсене</a>
                 </li>
 
-                <li class="nav-item">
+                <li *ngIf="isLogged" class="nav-item">
                     <a class="nav-link" routerLink="">Моите обяви</a>
                 </li>
 
@@ -28,17 +28,16 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Още
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" routerLink="register">Регистрация</a></li>
-                        <li><a class="dropdown-item" routerLink="login">Влизане</a></li>
+                        <li *ngIf="!isLogged"><a class="dropdown-item" routerLink="/register">Регистрация</a></li>
+                        <li *ngIf="!isLogged"><a class="dropdown-item" routerLink="/login">Влизане</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" routerLink="logout">Излизане</a></li>
+                        <li *ngIf="isLogged"><a class="dropdown-item" (click)="authService.logoutHandler()">Излизане</a></li>
                     </ul>
                 </li>
 

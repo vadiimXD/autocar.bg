@@ -2,6 +2,7 @@ const router = require("express").Router();
 const authService = require("../services/authService")
 
 router.post("/register", async (req, res) => {
+    console.log(req.body)
     try {
         const body = await authService.registerUser(req.body.email, req.body.password, req.body)
         res.send(body)

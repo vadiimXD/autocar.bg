@@ -3,17 +3,24 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CheckDirective } from './check.directive';
+import { EmailDirective } from './email.directive';
 
 
 
 @NgModule({
   declarations: [
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    CheckDirective,
+    EmailDirective
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+
   ],
   exports: [RegisterComponent, LoginComponent]
 })

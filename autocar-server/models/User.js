@@ -5,18 +5,25 @@ const userSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: true,
+        minLength: 2,
     },
     email: {
         type: String,
         required: true,
         trim: true,
-        unique: true
+        unique: true,
+        minLength: 5,
     },
     password: {
         type: String,
         trim: true,
-        required: true
+        required: true,
+        minLength: 3,
     },
+    cars: [{
+        type: mongoose.Types.ObjectId,
+        ref: "Car"
+    }]
 })
 
 const User = mongoose.model("User", userSchema)

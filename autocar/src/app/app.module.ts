@@ -7,6 +7,9 @@ import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { PublicModule } from './public/public.module';
+import { HttpClientModule } from "@angular/common/http"
+import { GlobalInterceptor } from './global.interceptor';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,11 @@ import { PublicModule } from './public/public.module';
     CoreModule,
     SharedModule,
     PublicModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [GlobalInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,24 +1,25 @@
 <section>
     <div class="center">
         <h1>Регистрация</h1>
-        <form>
+        <form #registerForm="ngForm" (ngSubmit)="authService.registerHandler(registerForm)">
             <div class="txt_field">
-                <input type="text" required>
+                <input type="text" name="email" ngModel required minlength="5" appEmail>
                 <span></span>
                 <label>Имейл</label>
             </div>
             <div class="txt_field">
-                <input type="text" required>
+                <input type="text" name="username" ngModel required minlength="2">
                 <span></span>
                 <label>Потребителско име</label>
             </div>
             <div class="txt_field">
-                <input type="password" required>
+                <input type="password" name="password" ngModel required minlength="3">
                 <span></span>
                 <label>Парола</label>
             </div>
             <div class="txt_field">
-                <input type="text" required>
+                <input type="password" name="repassword" ngModel required minlength="3"
+                    [appCheck]="registerForm.value.password">
                 <span></span>
                 <label>Повторна парола</label>
             </div>

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const PhoneSchema = new mongoose.Schema({
+const CarSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -42,14 +42,6 @@ const PhoneSchema = new mongoose.Schema({
         required: true,
         min: 0
     },
-    shoppingCart: [{
-        type: mongoose.Types.ObjectId,
-        ref: "Phone"
-    }],
-    boughtFrom: {
-        type: mongoose.Types.ObjectId,
-        ref: "User"
-    },
     owner: {
         type: mongoose.Types.ObjectId,
         ref: "User"
@@ -57,6 +49,6 @@ const PhoneSchema = new mongoose.Schema({
 })
 
 
-const Phone = mongoose.model("Phone", PhoneSchema)
+const Car = mongoose.model("Car", CarSchema)
 
-module.exports = Phone;
+module.exports = Car;

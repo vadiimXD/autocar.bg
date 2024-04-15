@@ -1,14 +1,14 @@
 <section>
     <div class="center">
         <h1>Влизане</h1>
-        <form method="post">
+        <form (ngSubmit)="">
             <div class="txt_field">
-                <input type="text" required>
+                <input type="text" required ngModel required minlength="5" appEmail>
                 <span></span>
                 <label>Имейл</label>
             </div>
             <div class="txt_field">
-                <input type="password" required>
+                <input type="password" required ngModel required minlength="3">
                 <span></span>
                 <label>Парола</label>
             </div>
