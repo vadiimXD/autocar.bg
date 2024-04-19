@@ -1,6 +1,8 @@
 import { NgModule, createComponent } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreateComponent } from './create/create.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -9,7 +11,9 @@ import { CreateComponent } from './create/create.component';
     CreateComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule,
   ],
   exports: [CreateComponent]
 })

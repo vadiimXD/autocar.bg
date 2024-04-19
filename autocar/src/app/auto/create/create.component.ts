@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AutoService } from '../auto.service';
 
 @Component({
   selector: 'app-create',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class CreateComponent {
 
+  constructor(public autoService: AutoService) { }
 }
