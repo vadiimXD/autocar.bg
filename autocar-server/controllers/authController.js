@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const authService = require("../services/authService")
 
-router.post("/register", async (req, res) => {
+router.post("/user/register", async (req, res) => {
     console.log(req.body)
     try {
         const body = await authService.registerUser(req.body.email, req.body.password, req.body)
@@ -13,7 +13,7 @@ router.post("/register", async (req, res) => {
     }
 })
 
-router.post("/login", async (req, res) => {
+router.post("/user/login", async (req, res) => {
     console.log(req.body)
     try {
         const body = await authService.loginUser(req.body);

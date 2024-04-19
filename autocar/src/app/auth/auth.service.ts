@@ -38,7 +38,7 @@ export class AuthService {
       return
     }
 
-    this.http.post<localUser>("http://localhost:1337/register", registerForm.value, {}).subscribe((data) => {
+    this.http.post<localUser>("http://localhost:1337/user/register", registerForm.value, {}).subscribe((data) => {
       if (data) {
         localStorage.setItem("auth", JSON.stringify(data))
         this.router.navigate(['']);
@@ -69,7 +69,7 @@ export class AuthService {
       return
     }
 
-    this.http.post<localUser>("http://localhost:1337/login", loginForm.value, {}).subscribe((data) => {
+    this.http.post<localUser>("http://localhost:1337/user/login", loginForm.value, {}).subscribe((data) => {
       if (data) {
         localStorage.setItem("auth", JSON.stringify(data))
         this.router.navigate(['']);

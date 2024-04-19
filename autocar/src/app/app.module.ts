@@ -10,6 +10,8 @@ import { PublicModule } from './public/public.module';
 import { HttpClientModule } from "@angular/common/http"
 import { GlobalInterceptor } from './global.interceptor';
 import { FormsModule } from '@angular/forms';
+import { AutoModule } from './auto/auto.module';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     AuthModule,
     CoreModule,
     SharedModule,
+    AutoModule,
     PublicModule,
     HttpClientModule,
     AppRoutingModule,

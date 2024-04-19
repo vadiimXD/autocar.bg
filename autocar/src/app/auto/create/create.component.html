@@ -1,0 +1,83 @@
+<section class="container">
+  <header>Създаване на обява</header>
+  <form class="form">
+    <div class="input-box">
+      <label>Марка</label>
+      <input type="text" placeholder="Марка на автомобила" required />
+    </div>
+
+    <div class="input-box">
+      <label>Модел</label>
+      <input type="text" placeholder="Модел на автомобила" required />
+    </div>
+
+    <div class="column">
+      <div class="input-box">
+        <label>Телефонен номер</label>
+        <input type="number" placeholder="Телефонен номер на собственика" required />
+      </div>
+      <div class="input-box">
+        <label>Дата на производство</label>
+        <input type="date" placeholder="Година на автомобила" required />
+      </div>
+    </div>
+    <div class="type-box">
+      <h3>Състояние</h3>
+      <div class="type-option">
+        <div class="type">
+          <input type="radio" id="check-used" name="type" />
+          <label for="check-used">Употребяван</label>
+        </div>
+        <div class="type">
+          <input type="radio" id="check-new" name="type" />
+          <label for="check-new">Нов</label>
+        </div>
+        <div class="type">
+          <input type="radio" id="check-other" name="type" />
+          <label for="check-other">На части</label>
+        </div>
+      </div>
+    </div>
+    <div class="input-box address">
+      <label>Локация</label>
+      <!-- <input type="text" placeholder="Enter street address" required />
+        <input type="text" placeholder="Enter street address line 2" required /> -->
+      <div class="column">
+        <div class="select-box">
+          <select>
+            <option hidden>Изберете област</option>
+            <option>America</option>
+            <option>Japan</option>
+            <option>India</option>
+            <option>Nepal</option>
+          </select>
+        </div>
+        <!-- <input type="text" placeholder="Enter your city" required /> -->
+      </div>
+      <div class="column">
+        <label>Двигател</label>
+
+        <div class="select-box">
+          <select>
+            <option hidden>Изберете вид двигател</option>
+            <option>America</option>
+            <option>Japan</option>
+            <option>India</option>
+            <option>Nepal</option>
+          </select>
+        </div>
+        <label>Скоростна кутия</label>
+        <div class="select-box">
+          <select>
+            <option hidden>Изберете вид кутия</option>
+            <option>America</option>
+            <option>Japan</option>
+            <option>India</option>
+            <option>Nepal</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button>Създаване</button>
+  </form>
+</section>
