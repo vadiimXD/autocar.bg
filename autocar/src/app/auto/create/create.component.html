@@ -1,299 +1,500 @@
 <!-- Aвтомобили и джхипове -->
-  <section class="container">
-    <header>Създаване на обява</header>
-    <form class="form" #createForm="ngForm" (ngSubmit)="autoService.createHandler(createForm)">
-      <label>Основна категория</label>
-      <div class="column">
+<section class="container">
+  <header>Създаване на обява</header>
+  <form class="form" #createForm="ngForm" (ngSubmit)="autoService.createHandler(createForm)">
+    <label>Основна категория</label>
+    <div class="column">
+      <div class="select-box">
+        <select name="mainCategory" ngModel required>
+          <option disabled hidden value="">Изберерете основна категория</option>
+          <option>Автомобили и Джипове</option>
+          <option>Камиони</option>
+          <option>Бусове</option>
+          <option>Мотоциклети</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="column">
+      <div>
+        <label for="">Марка</label>
         <div class="select-box">
-          <select name="mainCategory" ngModel required>
-            <option disabled hidden value="">Изберерете основна категория</option>
-            <option>Автомобили и Джипове</option>
-            <option>Камиони</option>
-            <option>Бусове</option>
-            <option>Мотоциклети</option>
+          <select name="brand" ngModel required appModels>
+            <option disabled hidden value="">Изберерете марка</option>
+            <option disabled>А</option>
+            <option>Acura</option>
+            <option>Abarth</option>
+            <option>Alpina</option>
+            <option>Audi</option>
+            <option>Astan Martin</option>
+            <option>Austin</option>
+            <option>Alfa Romeo</option>
+            <option disabled>B</option>
+            <option>BMW</option>
+            <option>Bentley</option>
+            <option>Baic</option>
+            <option>BAW</option>
+            <option>Berliner</option>
+            <option>Bugatti</option>
+            <option disabled>C</option>
+            <option>Cadillac</option>
+            <option>Citroen</option>
+            <option>Chery</option>
+            <option>Chevrolet</option>
+            <option>Corvette</option>
+            <option>Cupra</option>
+            <option disabled>D</option>
+            <option>Dodge</option>
+            <option>Daimler</option>
+            <option>Datsun</option>
+            <option>Dacia</option>
+            <option>Daihatsu</option>
+            <option>DS</option>
+            <option disabled>E</option>
+            <option>EDAG</option>
+            <option>Emme</option>
+            <option>Eagle</option>
+            <option disabled>F</option>
+            <option>Ford</option>
+            <option>Ferrari</option>
+            <option>Fiat</option>
+            <option disabled>G</option>
+            <option>Gaz</option>
+            <option>Genesis</option>
+            <option>Gonow</option>
+            <option>Geely</option>
+            <option disabled>H</option>
+            <option>Honda</option>
+            <option>Hyundai</option>
+            <option>Hummer</option>
+            <option>Haval</option>
+            <option disabled>I</option>
+            <option>Ifa</option>
+            <option>Isuzu</option>
+            <option>Iveco</option>
+            <option disabled>J</option>
+            <option>Jeep</option>
+            <option>Jaguar</option>
+            <option>Jpx</option>
+            <option disabled>K</option>
+            <option>Kia</option>
+            <option disabled>L</option>
+            <option>Lancia</option>
+            <option>Lada</option>
+            <option>Land Rover</option>
+            <option>Lamborghini</option>
+            <option>Lexus</option>
+            <option>Lotus</option>
+            <option disabled>M</option>
+            <option>Maserati</option>
+            <option>Mazda</option>
+            <option>Mitsubishi</option>
+            <option>Mini</option>
+            <option>McLaren</option>
+            <option>Mercedes-Benz</option>
+            <option>Maybach</option>
+            <option>Moskvich</option>
+            <option disabled>N</option>
+            <option>Nissan</option>
+            <option disabled>O</option>
+            <option>Opel</option>
+            <option disabled>P</option>
+            <option>Peugeot</option>
+            <option>Porsche</option>
+            <option>Polestar</option>
+            <option disabled>Q</option>
+            <option>Qoros</option>
+            <option disabled>R</option>
+            <option>Renault</option>
+            <option>Rolls-Royce</option>
+            <option disabled>S</option>
+            <option>Saab</option>
+            <option>Seat</option>
+            <option>Skoda</option>
+            <option>Smart</option>
+            <option>Subaru</option>
+            <option>Suzuki</option>
+            <option disabled>T</option>
+            <option>Trabant</option>
+            <option>Toyota</option>
+            <option>Tesla</option>
+            <option disabled>U</option>
+            <option>Uaz</option>
+            <option disabled>V</option>
+            <option>VW</option>
+            <option>Volvo</option>
+            <option>Volga</option>
+            <option disabled>W</option>
+            <option>Wartburg</option>
+            <option disabled>X</option>
+            <option>Xinkai</option>
+            <option disabled>Z</option>
+            <option>Zaz</option>
           </select>
         </div>
       </div>
 
+      <div>
+        <label for="">Модел</label>
+        <div class="select-box">
+          <select name="model" ngModel required>
+            <option disabled hidden value="">Изберерете модел</option>
+            <ng-container *ngIf="models">
+              <option *ngFor="let model of models">{{model}}</option>
+            </ng-container>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="input-box">
+      <label>VIN номер</label>
+      <input type="text" name="vin" ngModel placeholder="Въведете VIN номера на вашия автомобил" />
+    </div>
+
+    <div class="input-box">
+      <label>Пробег</label>
+      <input type="number" name="distance" ngModel required placeholder="Въведете пробега на вашия автомобил" />
+    </div>
+
+    <div class="input-box">
+      <label>Цена</label>
+      <input type="number" name="price" ngModel required placeholder="Въведете цена на вашия автомобил" />
+    </div>
+
+    <div class="column">
+
+      <div class="input-box">
+        <label>Телефонен номер</label>
+        <input type="number" name="phone" ngModel required
+          placeholder="Въведете телефоннения номер на собственика на автомобила" />
+      </div>
+
+      <div class="input-box">
+        <label>Година на производство</label>
+        <input type="number" name="year" ngModel required placeholder="Въведете годианта на производство на автомобила"
+          min="1900" max="2025" />
+      </div>
+    </div>
+
+    <div class="type-box">
+      <h3>Състояние</h3>
+      <div class="type-option">
+        <div class="type">
+          <input type="radio" checked id="check-used" ngModel value="Употребяван" name="type" required ngModel />
+          <label for="check-used">Употребяван</label>
+        </div>
+
+        <div class="type">
+          <input type="radio" id="check-new" ngModel value="Нов" name="type" required ngModel />
+          <label for="check-new">Нов</label>
+        </div>
+
+        <div class="type">
+          <input type="radio" id="check-other" name="type" value="На части" required ngModel />
+          <label for="check-other">На части</label>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="input-box address">
+      <label>Област</label>
+      <div class="column">
+        <div class="select-box">
+          <select name="district" required ngModel>
+            <option disabled hidden value="">Изберерете област</option>
+            <option>Japan</option>
+            <option>India</option>
+            <option>Nepal</option>
+          </select>
+        </div>
+
+      </div>
       <br>
-
+      <label>Населено място</label>
       <div class="column">
-        <div>
-          <label for="">Марка</label>
-          <div class="select-box">
-            <select name="brand" ngModel required>
-              <option disabled hidden value="">Изберерете марка</option>
-              <option disabled>А</option>
-              <option>Acura</option>
-              <option>Abarth</option>
-              <option>Alpina</option>
-              <option>Audi</option>
-              <option>Astan Martin</option>
-              <option>Austin</option>
-              <option>Alfa Romeo</option>
-              <option disabled>B</option>
-              <option>BMW</option>
-              <option>Bentley</option>
-              <option>Baic</option>
-              <option>BAW</option>
-              <option>Berliner</option>
-              <option>Bugatti</option>
-              <option disabled>C</option>
-              <option>Cadillac</option>
-              <option>Citroen</option>
-              <option>Chery</option>
-              <option>Chevrolet</option>
-              <option>Corvette</option>
-              <option>Cupra</option>
-              <option disabled>D</option>
-              <option>Dodge</option>
-              <option>Daimler</option>
-              <option>Datsun</option>
-              <option>Dacia</option>
-              <option>Daihatsu</option>
-              <option>DS</option>
-              <option disabled>E</option>
-              <option>EDAG</option>
-              <option>Emme</option>
-              <option>Eagle</option>
-              <option disabled>F</option>
-              <option>Ford</option>
-              <option>Ferrari</option>
-              <option>Fiat</option>
-              <option disabled>G</option>
-              <option>Gaz</option>
-              <option>Genesis</option>
-              <option>Gonow</option>
-              <option>Geely</option>
-              <option disabled>H</option>
-              <option>Honda</option>
-              <option>Hyundai</option>
-              <option>Hummer</option>
-              <option>Haval</option>
-              <option disabled>I</option>
-              <option>Ifa</option>
-              <option>Isuzu</option>
-              <option>Iveco</option>
-              <option disabled>J</option>
-              <option>Jeep</option>
-              <option>Jaguar</option>
-              <option>Jpx</option>
-              <option disabled>K</option>
-              <option>Kia</option>
-              <option disabled>L</option>
-              <option>Lancia</option>
-              <option>Lada</option>
-              <option>Land Rover</option>
-              <option>Lamborghini</option>
-              <option>Lexus</option>
-              <option>Lotus</option>
-              <option disabled>M</option>
-              <option>Maserati</option>
-              <option>Mazda</option>
-              <option>Mitsubishi</option>
-              <option>Mini</option>
-              <option>McLaren</option>
-              <option>Mercedes-Benz</option>
-              <option>Maybach</option>
-              <option>Moskvich</option>
-              <option disabled>N</option>
-              <option>Nissan</option>
-              <option disabled>O</option>
-              <option>Opel</option>
-              <option disabled>P</option>
-              <option>Peugeot</option>
-              <option>Porsche</option>
-              <option>Polestar</option>
-              <option disabled>Q</option>
-              <option>Qoros</option>
-              <option disabled>R</option>
-              <option>Renault</option>
-              <option>Rolls-Royce</option>
-              <option disabled>S</option>
-              <option>Saab</option>
-              <option>Seat</option>
-              <option>Skoda</option>
-              <option>Smart</option>
-              <option>Subaru</option>
-              <option>Suzuki</option>
-              <option disabled>T</option>
-              <option>Trabant</option>
-              <option>Toyota</option>
-              <option>Tesla</option>
-              <option disabled>U</option>
-              <option>Uaz</option>
-              <option disabled>V</option>
-              <option>VW</option>
-              <option>Volvo</option>
-              <option>Volga</option>
-              <option disabled>W</option>
-              <option>Wartburg</option>
-              <option disabled>X</option>
-              <option>Xinkai</option>
-              <option disabled>Z</option>
-              <option>Zaz</option>
-            </select>
-          </div>
-        </div>
+        <div class="select-box">
+          <select name="city" required ngModel>
+            <option disabled hidden value="">Изберерете населено място</option>
+            <option>dd</option>
 
-        <div>
-          <label for="">Модел</label>
-          <div class="select-box">
-            <select name="model" ngModel required>
-              <option disabled hidden value="">Изберерете модел</option>
-            </select>
-          </div>
-        </div>
-
-      </div>
-
-
-      <div class="input-box">
-        <label>VIN номер</label>
-        <input type="text" name="vin" ngModel placeholder="Въведете VIN номера на вашия автомобил" />
-      </div>
-
-      <div class="input-box">
-        <label>Пробег</label>
-        <input type="number" name="distance" ngModel required placeholder="Въведете пробега на вашия автомобил" />
-      </div>
-
-      <div class="input-box">
-        <label>Цена</label>
-        <input type="number" name="price" ngModel required placeholder="Въведете цена на вашия автомобил" />
-      </div>
-
-      <div class="column">
-
-        <div class="input-box">
-          <label>Телефонен номер</label>
-          <input type="number" name="phone" ngModel required
-            placeholder="Въведете телефоннения номер на собственика на автомобила" />
-        </div>
-
-        <div class="input-box">
-          <label>Дата на производство</label>
-          <input type="date" name="year" ngModel required />
+          </select>
         </div>
       </div>
 
-      <div class="type-box">
-        <h3>Състояние</h3>
-        <div class="type-option">
-          <div class="type">
-            <input type="radio" checked id="check-used" ngModel value="Употребяван" name="type" required ngModel />
-            <label for="check-used">Употребяван</label>
-          </div>
-
-          <div class="type">
-            <input type="radio" id="check-new" ngModel value="Нов" name="type" required ngModel />
-            <label for="check-new">Нов</label>
-          </div>
-
-          <div class="type">
-            <input type="radio" id="check-other" name="type" value="На части" required ngModel />
-            <label for="check-other">На части</label>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="input-box address">
-        <label>Област</label>
-        <div class="column">
-          <div class="select-box">
-            <select name="district" required ngModel>
-              <option disabled hidden value="">Изберерете област</option>
-              <option>Japan</option>
-              <option>India</option>
-              <option>Nepal</option>
-            </select>
-          </div>
-
-        </div>
+      <div>
         <br>
-        <label>Населено място</label>
-        <div class="column">
-          <div class="select-box">
-            <select name="city" required ngModel>
-              <option disabled hidden value="">Изберерете населено място</option>
-              <option>dd</option>
+        <label>Евростандарт</label>
+        <div class="select-box">
+          <select name="ecoCategory" ngModel required>
+            <option disabled hidden value="">Изберерете евростандарт на автомобила</option>
+            <option>Евро 1</option>
+            <option>Евро 2</option>
+            <option>Евро 3</option>
+            <option>Евро 4</option>
+            <option>Евро 5</option>
+            <option>Евро 6</option>
 
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <br>
+        <label>Категория на автомобила</label>
+        <div class="select-box">
+          <select name="carCategory" ngModel required>
+            <option disabled hidden value="">Изберерете категория на автомобила</option>
+            <option>Комби</option>
+            <option>Седан</option>
+            <option>Купе</option>
+            <option>Джип</option>
+            <option>Кабрио</option>
+            <option>Хечбек</option>
+            <option>Ван</option>
+            <option>Миниван</option>
+            <option>Пикап</option>
+            <option>Лимузина</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="column">
+
+        <div>
+          <br>
+          <label>Двигател</label>
+          <div class="select-box">
+            <select name="engine" ngModel required>
+              <option disabled hidden value="">Изберерете вид двигател на автомобила</option>
+              <option>Дизелов</option>
+              <option>Бензинов</option>
+              <option>Електрически</option>
+              <option>Хибриден</option>
             </select>
           </div>
         </div>
 
         <div>
           <br>
-          <label>Евростандарт</label>
+          <label>Скоростна кутия</label>
           <div class="select-box">
-            <select name="ecoCategory" ngModel required>
-              <option disabled hidden value="">Изберерете евростандарт на автомобила</option>
-              <option>Евро 1</option>
-              <option>Евро 2</option>
-              <option>Евро 3</option>
-              <option>Евро 4</option>
-              <option>Евро 5</option>
-              <option>Евро 6</option>
-
+            <select name="transmission" ngModel required>
+              <option disabled hidden value="">Изберерете вид скоростна кутия на автомобила</option>
+              <option>Ръчна</option>
+              <option>Автоматична</option>
+              <option>Полуавтоматична</option>
             </select>
           </div>
         </div>
 
-        <div>
-          <br>
-          <label>Категория на автомобила</label>
-          <div class="select-box">
-            <select name="carCategory" ngModel required>
-              <option disabled hidden value="">Изберерете категория на автомобила</option>
-              <option>Комби</option>
-              <option>Седан</option>
-              <option>Купе</option>
-              <option>Джип</option>
-              <option>Кабрио</option>
-              <option>Хечбек</option>
-              <option>Ван</option>
-              <option>Миниван</option>
-              <option>Пикап</option>
-              <option>Лимузина</option>
-            </select>
-          </div>
-        </div>
-        <br>
-        <div class="column">
+      </div>
 
-          <div>
-            <br>
-            <label>Двигател</label>
-            <div class="select-box">
-              <select name="engine" ngModel required>
-                <option disabled hidden value="">Изберерете вид двигател на автомобила</option>
-                <option>Дизелов</option>
-                <option>Бензинов</option>
-                <option>Електрически</option>
-                <option>Хибриден</option>
-              </select>
-            </div>
-          </div>
 
-          <div>
-            <br>
-            <label>Скоростна кутия</label>
-            <div class="select-box">
-              <select name="transmission" ngModel required>
-                <option disabled hidden value="">Изберерете вид скоростна кутия на автомобила</option>
-                <option>Ръчна</option>
-                <option>Автоматична</option>
-                <option>Полуавтоматична</option>
-              </select>
-            </div>
-          </div>
+    </div>
+
+    <div class="type-box">
+      <h3>Безопасност</h3>
+      <div class="type-checkbox">
+        <div class="check">
+          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety1" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety2" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety3" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety4" required ngModel />
+          <label for="check-used">Употребяван</label>
 
         </div>
 
       </div>
-      <button>Създаване</button>
-    </form>
+
+      <div class="type-checkbox">
+        <div class="check">
+          <input type="checkbox" checked id="check-used" ngModel name="safety5" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety6" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety7" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety8" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+        </div>
+
+      </div>
+
+      <div class="type-checkbox">
+        <div class="check">
+          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- <div class="type-box">
+      <h3>Безопасност</h3>
+      <div class="type-checkbox">
+        <div class="check">
+          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety1" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety2" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety3" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety4" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+        </div>
+
+      </div>
+
+      <div class="type-checkbox">
+        <div class="check">
+          <input type="checkbox" checked id="check-used" ngModel name="safety5" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety6" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety7" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety8" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+        </div>
+
+      </div>
+
+      <div class="type-checkbox">
+        <div class="check">
+          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+        </div>
+
+      </div>
+
+      
+      <div class="type-checkbox">
+        <div class="check">
+          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+        </div>
+
+      </div>
+
+         
+      <div class="type-checkbox">
+        <div class="check">
+          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+        </div>
+
+      </div>
+
+         
+      <div class="type-checkbox">
+        <div class="check">
+          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+        </div>
+
+      </div>
+
+         
+      <div class="type-checkbox">
+        <div class="check">
+          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
+          <label for="check-used">Употребяван</label>
+
+        </div>
+
+      </div>
+
+      
+
+    </div> -->
+
+    <button>Създаване</button>
+
+  </form>
 
 
-  </section>
+</section>

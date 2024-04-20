@@ -25,7 +25,7 @@ body {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 90%;
+    top: 95%;
     left: 50%;
     padding: 5%;
     transform: translate(-50%, -50%);
@@ -41,9 +41,8 @@ body {
 .container .form {
     margin-top: 30px;
     width: 100%;
-    /* Ensure the form takes full width */
     max-width: 500px;
-    /* Adjust as needed */
+
 }
 
 
@@ -96,7 +95,20 @@ body {
     flex-wrap: wrap;
 }
 
+
+.form :where(.type-checkbox, .check) {
+    display: flex;
+    align-items: center;
+    font-size: 12.5px;
+    column-gap: 50px;
+    flex-wrap: wrap;
+}
+
 .form .type {
+    column-gap: 5px;
+}
+
+.form .check {
     column-gap: 5px;
 }
 
@@ -104,11 +116,24 @@ body {
     accent-color: rgb(201, 122, 5);
 }
 
+.check input {
+    accent-color: rgb(201, 122, 5);
+}
+
 .form :where(.type input, .type label) {
     cursor: pointer;
 }
 
+.form :where(.check input, .check label) {
+    cursor: pointer;
+}
+
+
 .type label {
+    color: #707070;
+}
+
+.check label {
     color: #707070;
 }
 
@@ -153,7 +178,14 @@ body {
     .form :where(.type-option, .type) {
         row-gap: 15px;
     }
+
+    
+    .form :where(.type-checkbox, .check) {
+        row-gap: 15px;
+    }
 }
+
+
 
 label {
     color: rgb(201, 122, 5);
@@ -167,8 +199,3 @@ option:disabled {
 .type-box h3 {
     color: rgb(201, 122, 5);
 }
-
-.form .input-box input[type="date"]::placeholder {
-    color: transparent;
-}
-

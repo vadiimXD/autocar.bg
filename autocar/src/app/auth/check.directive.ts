@@ -20,7 +20,7 @@ export class CheckDirective {
     validate(control: AbstractControl<any, any>): ValidationErrors | null {
         const password = this.appCheck
         const repassword = control.value
-        debugger
+        
         if (!password) return { Error: "Empty fields.." }
         if (!repassword) return { Error: "Empty fields.." }
         if (repassword !== password) return { Error: "Passwords dont matches!" }

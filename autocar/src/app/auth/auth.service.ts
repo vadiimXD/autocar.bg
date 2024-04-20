@@ -30,7 +30,6 @@ export class AuthService {
   constructor(private router: Router, private http: HttpClient) { }
 
   registerHandler(registerForm: NgForm): void {
-    debugger
     console.log(registerForm)
     if (registerForm.invalid) {
       // this.errorMsgService.showError(errorHandler(registerForm)) 
@@ -62,7 +61,6 @@ export class AuthService {
   }
 
   loginHandler(loginForm: NgForm) {
-    debugger
     if (loginForm.invalid) {
       // this.errorMsgService.showError(errorHandler(loginForm))
       alert("error from  form")

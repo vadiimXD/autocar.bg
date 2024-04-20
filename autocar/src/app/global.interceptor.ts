@@ -19,7 +19,7 @@ export class GlobalInterceptor implements HttpInterceptor {
   constructor() { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    debugger
+    
     if (request.method == "GET") {
       request = request.clone({
         setHeaders: {
@@ -31,6 +31,7 @@ export class GlobalInterceptor implements HttpInterceptor {
 
 
     if (request.method == "POST" || request.method == "PUT" || request.method == "DELETE") {
+      
       const user: any = this.user
       if (user) {
         request = request.clone({
@@ -47,7 +48,7 @@ export class GlobalInterceptor implements HttpInterceptor {
         })
       }
     }
-
+debugger
     return next.handle(request);
   }
 }
