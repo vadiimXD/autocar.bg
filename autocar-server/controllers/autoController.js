@@ -11,4 +11,13 @@ router.post("/get/models", async (req, res) => {
     }
 })
 
+router.get("/create/models", async (req, res) => {
+try {
+    await autoService.createModels()
+    res.send(true)
+} catch (error) {
+    res.send(false)
+}
+})
+
 module.exports = router

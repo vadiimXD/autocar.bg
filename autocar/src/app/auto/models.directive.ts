@@ -13,14 +13,15 @@ import { AutoService } from './auto.service';
 
 export class ModelsDirective {
 
-  constructor(private autoService:AutoService) { }
+  constructor(private autoService: AutoService) {
+  }
 
-  validate(control: AbstractControl<any, any>): ValidationErrors | null {
+  validate(control: AbstractControl<any, any>): void {
     if (!control.value) {
-      return null
+      return
     }
     this.autoService.getModels(control.value)
-    return null
+    return
 
   }
 

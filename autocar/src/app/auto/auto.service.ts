@@ -20,6 +20,11 @@ export class AutoService implements OnDestroy {
     console.log(createForm.value)
   }
 
+  generateModels(): void {
+
+    console.log("generated")
+    this.http.get<any>("http://localhost:1337/create/models", {}).subscribe()
+  }
 
   getModels(brand: string) {
     const event = this.http.post<Model | false>("http://localhost:1337/get/models", { brand }, {}).subscribe(data => {

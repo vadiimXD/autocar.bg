@@ -61,7 +61,7 @@ body {
     width: 100%;
     outline: none;
     font-size: 1rem;
-    color: #707070;
+    color: black;
     margin-top: 8px;
     border: 1px solid #ddd;
     border-radius: 6px;
@@ -128,10 +128,12 @@ body {
     cursor: pointer;
 }
 
+/* ! CHNAGE COLOR */
 
 .type label {
     color: #707070;
 }
+/* ! CHNAGE COLOR */
 
 .check label {
     color: #707070;
@@ -140,7 +142,7 @@ body {
 .address :where(input, .select-box) {
     margin-top: 15px;
 }
-
+/* ! CHNAGE COLOR */
 .select-box select {
     height: 100%;
     width: 100%;
