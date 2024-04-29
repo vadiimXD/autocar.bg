@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AutoService } from '../auto.service';
-import { Model } from 'src/types/Auto';
 
 @Component({
   selector: 'app-create',
@@ -9,6 +8,7 @@ import { Model } from 'src/types/Auto';
 })
 export class CreateComponent implements OnInit, OnDestroy {
   models: string[] = []
+  cities: string[] = []
   eventsQ: any[] = []
   constructor(public autoService: AutoService) { }
 
@@ -17,7 +17,13 @@ export class CreateComponent implements OnInit, OnDestroy {
       this.models = data
     })
 
+    let event2 = this.autoService.citiesInfo$.subscribe((data: string[]) => {
+      console.log(data, " from component")
+      this.cities = data
+    })
+
     this.eventsQ.push(event)
+    this.eventsQ.push(event2)
   }
 
   ngOnDestroy(): void {

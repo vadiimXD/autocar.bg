@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ModelsDirective } from './models.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { CitiesDirective } from './cities.directive';
 
 
 
@@ -12,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     CreateComponent,
     ModelsDirective,
+    CitiesDirective
   ],
   imports: [
     CommonModule,

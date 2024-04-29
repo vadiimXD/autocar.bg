@@ -10,6 +10,6 @@ const ModelSchema = new mongoose.Schema({
 })
 
 
-const Model = mongoose.model("Model", ModelSchema)
+const CarModel = mongoose.model("carmodels", ModelSchema)
 
-module.exports = Model;
+module.exports = CarModel;

@@ -1,15 +1,27 @@
-const Model = require("../models/Model")
+const CarModel = require("../models/Model")
+const citiesModel = require("../models/City")
 
-exports.getModels = (brand) => Model.findOne({ brand })
+exports.getModels = (brand) => CarModel.findOne({ brand })
 
-exports.createModels = () => Model.create({
-    brand: "Datsun", models: [
-        "Go",
-        "Go+",
-        "Redi-Go",
-        "on-Do",
-        "mi-Do",
-        "Cherry",
-        "Stanza",
+exports.getCities = (area) => citiesModel.findOne({ area })
+
+exports.createModels = () => citiesModel.create({
+    area: "Благоевград", cities: [
+        "Банско",
+        "Белица",
+        "Благоевград",
+        "Гоце Делчев",
+        "Гърмен",
+        "Кресна",
+        "Петрич",
+        "Разлог",
+        "Сандански",
+        "Сатовча",
+        "Симитли",
+        "Струмяни",
+        "Хаджидимово",
+        "Якоруда",
     ]
+
+
 }) 

@@ -49,20 +49,7 @@ exports.loginUser = async (body) => {
     if (!isValid) {
         throw new Error("invalid username or password")
     }
-    Model.create({
-        brand: "Chery", models: [
-            "Tiggo",
-            "Arrizo",
-            "QQ",
-            "Fulwin",
-            "Tiggo 8",
-            "Tiggo 7",
-            "Tiggo 5",
-            "Arrizo GX",
-            "Tiggo 4",
-            "Tiggo 2"
-        ]
-    })
+  
     const token = await this.createToken(user._id);
     return {
         userId: user._id,

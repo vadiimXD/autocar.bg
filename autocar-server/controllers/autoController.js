@@ -11,6 +11,17 @@ router.post("/get/models", async (req, res) => {
     }
 })
 
+router.post("/get/cities", async (req, res) => {
+    console.log(req.body)
+    try {
+        const cities = await autoService.getCities(req.body.area)
+        console.log(cities," cities")
+        res.send(cities)
+    } catch (error) {
+        res.send(false)
+    }
+})
+
 router.get("/create/models", async (req, res) => {
 try {
     await autoService.createModels()

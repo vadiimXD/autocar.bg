@@ -56,8 +56,6 @@
             <option>Daihatsu</option>
             <option>DS</option>
             <option disabled>E</option>
-            <option>EDAG</option>
-            <option>Emme</option>
             <option>Eagle</option>
             <option disabled>F</option>
             <option>Ford</option>
@@ -66,7 +64,7 @@
             <option disabled>G</option>
             <option>Gaz</option>
             <option>Genesis</option>
-            <option>Gonow</option>
+            <option>Great Wall</option>
             <option>Geely</option>
             <option disabled>H</option>
             <option>Honda</option>
@@ -133,6 +131,8 @@
             <option>Wartburg</option>
             <option disabled>X</option>
             <option>Xinkai</option>
+            <option disabled>Y</option>
+            <option>Yogomo</option>
             <option disabled>Z</option>
             <option>Zaz</option>
           </select>
@@ -167,6 +167,11 @@
     <div class="input-box">
       <label>Цена</label>
       <input type="number" name="price" ngModel required placeholder="Въведете цена на вашия автомобил" />
+    </div>
+
+    <div class="input-box">
+      <label>Кубатура</label>
+      <input type="text" name="kb" ngModel required placeholder="Въведете кубатурата на вашия автомобил" />
     </div>
 
     <div class="column">
@@ -209,11 +214,36 @@
       <label>Област</label>
       <div class="column">
         <div class="select-box">
-          <select name="district" required ngModel>
+          <select name="district" required ngModel appCities>
             <option disabled hidden value="">Изберерете област</option>
-            <option>Japan</option>
-            <option>India</option>
-            <option>Nepal</option>
+            <option>Благоевград</option>
+            <option>Бургас</option>
+            <option>Варна</option>
+            <option>Велико Търново</option>
+            <option>Видин</option>
+            <option>Видин</option>
+            <option>Габрово</option>
+            <option>Добрич</option>
+            <option>Кърдажли</option>
+            <option>Кюстендил</option>
+            <option>Ловеч</option>
+            <option>Монтана</option>
+            <option>Пазарджик</option>
+            <option>Перник</option>
+            <option>Плевен</option>
+            <option>Пловдив</option>
+            <option>Разград</option>
+            <option>Русе</option>
+            <option>Силистра</option>
+            <option>Сливен</option>
+            <option>Смолян</option>
+            <option>София</option>
+            <option>Софийска област</option>
+            <option>Стара Загора</option>
+            <option>Търговище</option>
+            <option>Хасково</option>
+            <option>Шумен</option>
+            <option>Ямбол</option>
           </select>
         </div>
 
@@ -224,8 +254,7 @@
         <div class="select-box">
           <select name="city" required ngModel>
             <option disabled hidden value="">Изберерете населено място</option>
-            <option>dd</option>
-
+            <option *ngFor="let city of cities">{{city}}</option>
           </select>
         </div>
       </div>
@@ -242,6 +271,57 @@
             <option>Евро 4</option>
             <option>Евро 5</option>
             <option>Евро 6</option>
+
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <br>
+        <label>Цвят</label>
+        <div class="select-box">
+          <select name="color" ngModel required>
+            <option disabled hidden value="">Изберерете цвят на автомобила</option>
+            <option>Тъмно син</option>
+            <option>Банан</option>
+            <option>Беата</option>
+            <option>Бежов</option>
+            <option>Бордо</option>
+            <option>Бронз</option>
+            <option>Бял</option>
+            <option>Винен</option>
+            <option>Виолетов</option>
+            <option>Вишнев</option>
+            <option>Графит</option>
+            <option>Жълт</option>
+            <option>Зелен</option>
+            <option>Златист</option>
+            <option>Кафяв</option>
+            <option>Керемиден</option>
+            <option>Кремав</option>
+            <option>Лилав</option>
+            <option>Металик</option>
+            <option>Оранжев</option>
+            <option>Охра</option>
+            <option>Пепеляв</option>
+            <option>Перла</option>
+            <option>Пясъчен</option>
+            <option>Резидав</option>
+            <option>Розов</option>
+            <option>Сахара</option>
+            <option>Светло син</option>
+            <option>Светло сив</option>
+            <option>Светло сив</option>
+            <option>Сив</option>
+            <option>Син</option>
+            <option>Сребърен</option>
+            <option>Тъмно зелен</option>
+            <option>Тъмно сив</option>
+            <option>Тъмно син металик</option>
+            <option>Тъмно червен</option>
+            <option>Хамелеон</option>
+            <option>Червен</option>
+            <option>Черен</option>
 
           </select>
         </div>
