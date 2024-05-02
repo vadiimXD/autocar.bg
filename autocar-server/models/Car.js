@@ -42,6 +42,12 @@ const CarSchema = new mongoose.Schema({
         required: true,
         min: 0
     },
+    extras: {
+        safety1: {
+            type: String
+        },
+
+    },
     owner: {
         type: mongoose.Types.ObjectId,
         ref: "User"

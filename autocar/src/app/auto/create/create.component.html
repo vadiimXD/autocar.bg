@@ -1,7 +1,7 @@
 <!-- Aвтомобили и джхипове -->
 <section class="container">
   <header>Създаване на обява</header>
-  <form class="form" #createForm="ngForm" (ngSubmit)="autoService.createHandler(createForm)">
+  <form class="form" #createForm="ngForm" (ngSubmit)="autoService.createHandlerMain(createForm)">
     <label>Основна категория</label>
     <div class="column">
       <div class="select-box">
@@ -153,7 +153,6 @@
 
     </div>
 
-
     <div class="input-box">
       <label>VIN номер</label>
       <input type="text" name="vin" ngModel placeholder="Въведете VIN номера на вашия автомобил" />
@@ -188,6 +187,7 @@
           min="1900" max="2025" />
       </div>
     </div>
+    <br>
 
     <div class="type-box">
       <h3>Състояние</h3>
@@ -221,10 +221,10 @@
             <option>Варна</option>
             <option>Велико Търново</option>
             <option>Видин</option>
-            <option>Видин</option>
+            <option>Враца</option>
             <option>Габрово</option>
             <option>Добрич</option>
-            <option>Кърдажли</option>
+            <option>Кърджали</option>
             <option>Кюстендил</option>
             <option>Ловеч</option>
             <option>Монтана</option>
@@ -381,202 +381,8 @@
 
     </div>
 
-    <div class="type-box">
-      <h3>Безопасност</h3>
-      <div class="type-checkbox">
-        <div class="check">
-          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety1" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety2" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety3" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety4" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-        </div>
-
-      </div>
-
-      <div class="type-checkbox">
-        <div class="check">
-          <input type="checkbox" checked id="check-used" ngModel name="safety5" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety6" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety7" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety8" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-        </div>
-
-      </div>
-
-      <div class="type-checkbox">
-        <div class="check">
-          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- <div class="type-box">
-      <h3>Безопасност</h3>
-      <div class="type-checkbox">
-        <div class="check">
-          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety1" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety2" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety3" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety4" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-        </div>
-
-      </div>
-
-      <div class="type-checkbox">
-        <div class="check">
-          <input type="checkbox" checked id="check-used" ngModel name="safety5" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety6" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety7" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety8" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-        </div>
-
-      </div>
-
-      <div class="type-checkbox">
-        <div class="check">
-          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-        </div>
-
-      </div>
-
-      
-      <div class="type-checkbox">
-        <div class="check">
-          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-        </div>
-
-      </div>
-
-         
-      <div class="type-checkbox">
-        <div class="check">
-          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-        </div>
-
-      </div>
-
-         
-      <div class="type-checkbox">
-        <div class="check">
-          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-        </div>
-
-      </div>
-
-         
-      <div class="type-checkbox">
-        <div class="check">
-          <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-          <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-          <label for="check-used">Употребяван</label>
-
-        </div>
-
-      </div>
-
-      
-
-    </div> -->
-
-    <button>Създаване</button>
-<button (click)="autoService.generateModels()">generate</button>
+    <button>Продължаване</button>
+    <!-- <button (click)="autoService.generateModels()">generate</button> -->
   </form>
 
 

@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { ModelsDirective } from './models.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { CitiesDirective } from './cities.directive';
+import { CreateTwoComponent } from './create-two/create-two.component';
+import { CreateThreeComponent } from './create-three/create-three.component';
 
 
 
@@ -13,7 +15,9 @@ import { CitiesDirective } from './cities.directive';
   declarations: [
     CreateComponent,
     ModelsDirective,
-    CitiesDirective
+    CitiesDirective,
+    CreateTwoComponent,
+    CreateThreeComponent
   ],
   imports: [
     CommonModule,

@@ -18,9 +18,10 @@ export class CreateComponent implements OnInit, OnDestroy {
     })
 
     let event2 = this.autoService.citiesInfo$.subscribe((data: string[]) => {
-      console.log(data, " from component")
       this.cities = data
     })
+
+    this.autoService.fileName = "Изберете снимки на вашия автомобил"
 
     this.eventsQ.push(event)
     this.eventsQ.push(event2)

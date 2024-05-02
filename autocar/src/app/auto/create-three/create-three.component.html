@@ -1,0 +1,17 @@
+<section class="container">
+    <header>Снимки</header>
+    <form class="form" #createFormExtras="ngForm" (ngSubmit)="autoService.createHandlerExtras(createFormExtras)">
+
+        <div class="mb-3">
+        <label>Снимки на автомобила</label>
+        <input type="file" id="formFileMultiple" (change)="autoService.changeLabelName($event)" name="images"
+          multiple required ngModel  accept="image/*">
+        <label for="formFileMultiple" id="fileUpload">{{autoService.fileName}}</label>
+      </div>
+
+        <button>Създаване на обява</button>
+    
+    </form>
+
+
+</section>
