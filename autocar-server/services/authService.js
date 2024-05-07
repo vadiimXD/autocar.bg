@@ -22,7 +22,7 @@ exports.registerUser = async (email, password, body) => {
     const user = await this.getUser(email);
     const token = await this.createToken(user._id);
     return {
-        userId: user._id,
+        userId: user._id, 
         token,
         email: user.email
     }

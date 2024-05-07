@@ -19,7 +19,7 @@
 
     <div class="column">
       <div>
-        <label for="">Марка</label>
+        <label>Марка</label>
         <div class="select-box">
           <select name="brand" ngModel required appModels>
             <option disabled hidden value="">Изберерете марка</option>
@@ -155,36 +155,36 @@
 
     <div class="input-box">
       <label>VIN номер</label>
-      <input type="text" name="vin" ngModel placeholder="Въведете VIN номера на вашия автомобил" />
+      <input type="text" name="vin" ngModel minlength="5" placeholder="Въведете VIN номера на вашия автомобил" />
     </div>
 
     <div class="input-box">
       <label>Пробег</label>
-      <input type="number" name="distance" ngModel required placeholder="Въведете пробега на вашия автомобил" />
+      <input type="number" name="distance" ngModel required min="0" placeholder="Въведете пробега на вашия автомобил" />
     </div>
 
     <div class="input-box">
       <label>Цена</label>
-      <input type="number" name="price" ngModel required placeholder="Въведете цена на вашия автомобил" />
+      <input type="number" name="price" ngModel min="1" required placeholder="Въведете цена на вашия автомобил" />
     </div>
 
     <div class="input-box">
       <label>Кубатура</label>
-      <input type="text" name="kb" ngModel required placeholder="Въведете кубатурата на вашия автомобил" />
+      <input type="number" name="kb" ngModel required min="999" placeholder="Въведете кубатурата на вашия автомобил" />
     </div>
 
     <div class="column">
 
       <div class="input-box">
         <label>Телефонен номер</label>
-        <input type="number" name="phone" ngModel required
+        <input type="text" name="phone"  ngModel  minlength="10" maxlength="10" required
           placeholder="Въведете телефоннения номер на собственика на автомобила" />
       </div>
 
       <div class="input-box">
         <label>Година на производство</label>
         <input type="number" name="year" ngModel required placeholder="Въведете годианта на производство на автомобила"
-          min="1900" max="2025" />
+          min="1700" max="2025" />
       </div>
     </div>
     <br>
@@ -193,7 +193,7 @@
       <h3>Състояние</h3>
       <div class="type-option">
         <div class="type">
-          <input type="radio" checked id="check-used" ngModel value="Употребяван" name="type" required ngModel />
+          <input type="radio" id="check-used" ngModel value="Употребяван" name="type" required ngModel />
           <label for="check-used">Употребяван</label>
         </div>
 

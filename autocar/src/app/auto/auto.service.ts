@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Model } from 'src/types/Auto';
 import { City } from 'src/types/City';
+import { Error } from 'src/types/Error';
+import { errorHandler } from 'src/utils/errorHandler';
 
 @Injectable({
   providedIn: 'root'
@@ -17,22 +19,27 @@ export class AutoService implements OnDestroy {
   private citiesInfo$$: any = new BehaviorSubject(null)
   public citiesInfo$ = this.citiesInfo$$.asObservable()
 
-   public fileName: string = ""
+  public fileName: string = ""
 
   eventsQ: any = []
   constructor(private http: HttpClient, private router: Router) { }
 
   createHandlerMain(createFormMain: NgForm): void {
     console.log(createFormMain)
-    console.log(createFormMain.invalid, " invalid")
+
     console.log(createFormMain.value)
 
+    if (createFormMain.invalid) {
+
+      const msg: Error | null = errorHandler(createFormMain)
+      return alert(msg?.message)
+    }
 
     this.router.navigate(['/create/extras']);
 
   }
 
-  
+
   createHandlerExtras(createFormExtras: NgForm): void {
     console.log(createFormExtras)
     console.log(createFormExtras.invalid, " invalid")
@@ -49,14 +56,14 @@ export class AutoService implements OnDestroy {
 
     if (e.target.files.length != 1) this.fileName = `Вие имате ${e.target.files.length} избрани снимки!`
 
-    // const reader = new FileReader()
-    // console.log(e.target.files[0], "file")
-    // const url = reader.readAsDataURL(e.target.files[0])
-    // console.log(url, "file from reader")
+    const reader = new FileReader()
+    console.log(e.target.files[0], "file")
+    const url = reader.readAsDataURL(e.target.files[0])
+    console.log(url, "file from reader")
 
-    // reader.onload = (events: any) => {
-    //   console.log(events.target.result, "result")
-    // }
+    reader.onload = (events: any) => {
+      console.log(events.target.result, "result")
+    }
   }
 
   generateModels(): void {

@@ -21,7 +21,7 @@ export class CreateComponent implements OnInit, OnDestroy {
       this.cities = data
     })
 
-    this.autoService.fileName = "Изберете снимки на вашия автомобил"
+  
 
     this.eventsQ.push(event)
     this.eventsQ.push(event2)

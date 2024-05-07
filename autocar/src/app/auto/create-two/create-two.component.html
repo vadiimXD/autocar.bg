@@ -2,35 +2,21 @@
     <header>Екстри</header>
     <form class="form" #createFormExtras="ngForm" (ngSubmit)="autoService.createHandlerExtras(createFormExtras)">
 
-
-
-        <!-- <div class="mb-3">
-        <label>Снимки на автомобила</label>
-        <input type="file" id="formFileMultiple" (change)="autoService.changeLabelName($event)" name="images"
-          multiple required ngModel  accept="image/*">
-        <label for="formFileMultiple" id="fileUpload">{{autoService.fileName}}</label>
-      </div> -->
-
-
         <div class="type-box">
             <h3>Безопасност</h3>
             <div class="type-checkbox">
                 <div class="check">
-                    <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety1" required
-                        ngModel />
-                    <label for="check-used">Система за проследяване</label>
+                    <input type="checkbox" checked id="check-safety1" ngModel name="safety1" ngModel />
+                    <label for="check-safety1">Система за проследяване</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety2" required
-                        ngModel />
-                    <label for="check-used">Авто контрол на стабилността</label>
+                    <input type="checkbox" checked id="check-safety2" ngModel name="safety2" ngModel />
+                    <label for="check-safety2">Авто контрол на стабилността</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety3" required
-                        ngModel />
-                    <label for="check-used">Антиблокираща система</label>
+                    <input type="checkbox" checked id="check-safety3" ngModel name="safety3" ngModel />
+                    <label for="check-safety3">Антиблокираща система</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety4" required
-                        ngModel />
-                    <label for="check-used">Въздушни възглавници предни</label>
+                    <input type="checkbox" checked id="check-safety4" ngModel name="safety4" ngModel />
+                    <label for="check-safety4">Въздушни възглавници предни</label>
 
                 </div>
 
@@ -38,17 +24,17 @@
 
             <div class="type-checkbox">
                 <div class="check">
-                    <input type="checkbox" checked id="check-used" ngModel name="safety5" required ngModel />
-                    <label for="check-used">Въздушни възглавници задни</label>
+                    <input type="checkbox" checked id="check-safety5" ngModel name="safety5" ngModel />
+                    <label for="check-safety5">Въздушни възглавници задни</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety6" required ngModel />
-                    <label for="check-used">Въздушни възглавници странични</label>
+                    <input type="checkbox" checked id="check-safety6" ngModel name="safety6" ngModel />
+                    <label for="check-safety6">Въздушни възглавници странични</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety7" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-safety7" ngModel name="safety7" ngModel />
+                    <label for="check-safety7">Система за динамична устойчивост</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety8" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-safety8" ngModel name="safety8" ngModel />
+                    <label for="check-safety8">Система за контрол на дистанцията</label>
 
                 </div>
 
@@ -56,20 +42,33 @@
 
             <div class="type-checkbox">
                 <div class="check">
-                    <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-safety9" ngModel name="safety9" ngModel />
+                    <label for="check-safety9">Система ISOFIX</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-safety10" ngModel name="safety10" ngModel />
+                    <label for="check-safety10">Систмеа за подпомагане на спиране</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-safety11" ngModel name="safety11" ngModel />
+                    <label for="check-safety11">Система за защита от пробуксуване</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-safety12" ngModel name="safety12" ngModel />
+                    <label for="check-safety12">Система за контрол на спускането</label>
 
                 </div>
 
+
+                <div class="check">
+                    <input type="checkbox" checked id="check-safety13" ngModel name="safety13" ngModel />
+                    <label for="check-safety13">Брониран</label>
+
+                    <input type="checkbox" checked id="check-safety14" ngModel name="safety14" ngModel />
+                    <label for="check-safety14">Лебедка</label>
+
+                    <input type="checkbox" checked id="check-safety15" ngModel name="safety15" ngModel />
+                    <label for="check-safety15">Централно заключване</label>
+
+
+                </div>
             </div>
 
         </div>
@@ -77,24 +76,20 @@
         <hr>
 
         <div class="type-box">
-            <h3>Безопасност</h3>
+            <h3>Комфорт</h3>
             <div class="type-checkbox">
                 <div class="check">
-                    <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety1" required
-                        ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort1" ngModel name="comfort1" ngModel />
+                    <label for="check-comfort1">DVD,TV</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety2" required
-                        ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort2" ngModel name="comfort2" ngModel />
+                    <label for="check-comfort2">Steptronic,Tiptronic</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety3" required
-                        ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort3" ngModel name="comfort3" ngModel />
+                    <label for="check-comfort3">USD,audio/video, IN/AUX</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel value="Употребяван" name="safety4" required
-                        ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort4" ngModel name="comfort4" ngModel />
+                    <label for="check-comfort4">Безключово палене</label>
 
                 </div>
 
@@ -102,17 +97,17 @@
 
             <div class="type-checkbox">
                 <div class="check">
-                    <input type="checkbox" checked id="check-used" ngModel name="safety5" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort5" ngModel name="comfort5" ngModel />
+                    <label for="check-comfort5">Бордкомпютър</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety6" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort6" ngModel name="comfort6" ngModel />
+                    <label for="check-comfort6">Датчик за светлина</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety7" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort7" ngModel name="comfort7" ngModel />
+                    <label for="check-comfort7">Блокаж на диференциала</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety8" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort8" ngModel name="comfort8" ngModel />
+                    <label for="check-comfort8">Bluetooth \ handsfree система</label>
 
                 </div>
 
@@ -120,17 +115,17 @@
 
             <div class="type-checkbox">
                 <div class="check">
-                    <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort10" ngModel name="comfort10" ngModel />
+                    <label for="check-comfort10">Климатроник</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort10" ngModel name="comfort10" ngModel />
+                    <label for="check-comfort10">Климатик</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort11" ngModel name="comfort11" ngModel />
+                    <label for="check-comfort11">Ел. Стъкла</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort12" ngModel name="comfort12" ngModel />
+                    <label for="check-comfort12">Ел. Огледала</label>
 
                 </div>
 
@@ -139,36 +134,17 @@
 
             <div class="type-checkbox">
                 <div class="check">
-                    <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort13" ngModel name="comfort13" ngModel />
+                    <label for="check-comfort13">Ел. регулиране на окачването</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort14" ngModel name="comfort14" ngModel />
+                    <label for="check-comfort14">Печка</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort15" ngModel name="comfort15" ngModel />
+                    <label for="check-comfort15">Сензор за дъжд</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-                    <label for="check-used">Употребяван</label>
-
-                </div>
-
-            </div>
-
-
-            <div class="type-checkbox">
-                <div class="check">
-                    <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-                    <label for="check-used">Употребяван</label>
-
-                    <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-                    <label for="check-used">Употребяван</label>
-
-                    <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-                    <label for="check-used">Употребяван</label>
-
-                    <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort16" ngModel name="comfort16" ngModel />
+                    <label for="check-comfort16">Регулиране на волана</label>
 
                 </div>
 
@@ -177,17 +153,17 @@
 
             <div class="type-checkbox">
                 <div class="check">
-                    <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort17" ngModel name="comfort17" ngModel />
+                    <label for="check-comfort17">Подгряване на седалките</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort18" ngModel name="comfort18" ngModel />
+                    <label for="check-comfort18">Подгряване на предното стъкло</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort19" ngModel name="comfort19" ngModel />
+                    <label for="check-comfort19">Отопление на волана</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort20" ngModel name="comfort20" ngModel />
+                    <label for="check-comfort20">Навигация</label>
 
                 </div>
 
@@ -196,20 +172,75 @@
 
             <div class="type-checkbox">
                 <div class="check">
-                    <input type="checkbox" checked id="check-used" ngModel name="safety9" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort21" ngModel name="comfort21" ngModel />
+                    <label for="check-comfort21">Мултифункционален волан</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety10" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort22" ngModel name="comfort22" ngModel />
+                    <label for="check-comfort22">Серво усилвател на волана</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety11" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort23" ngModel name="comfort23" ngModel />
+                    <label for="check-comfort23">Система за измиване на фаровете</label>
 
-                    <input type="checkbox" checked id="check-used" ngModel name="safety12" required ngModel />
-                    <label for="check-used">Употребяван</label>
+                    <input type="checkbox" checked id="check-comfort24" ngModel name="comfort24" ngModel />
+                    <label for="check-comfort24">Система за контрол на скоростта (автопилот)</label>
 
                 </div>
 
+            </div>
+
+
+            <div class="type-checkbox">
+                <div class="check">
+                    <input type="checkbox" checked id="check-comfort25" ngModel name="comfort25" ngModel />
+                    <label for="check-comfort25">Термопомпа</label>
+
+                    <input type="checkbox" checked id="check-comfort26" ngModel name="comfort26" ngModel />
+                    <label for="check-comfort26">Хладилна жабка</label>
+
+                    <input type="checkbox" checked id="check-comfort27" ngModel name="comfort27" ngModel />
+                    <label for="check-comfort27">Стерео уредба</label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+        <div class="type-box">
+            <h3>Други</h3>
+
+            <div class="type-checkbox">
+                <div class="check">
+                    <input type="checkbox" checked id="check-other1" ngModel name="other1" ngModel />
+                    <label for="check-other1">4x4</label>
+
+                    <input type="checkbox" checked id="check-other2" ngModel name="other2" ngModel />
+                    <label for="check-other2">С регистрация</label>
+
+                    <input type="checkbox" checked id="check-other3" ngModel name="other3" ngModel />
+                    <label for="check-other3">Тунинг</label>
+
+                    <input type="checkbox" checked id="check-other4" ngModel name="other4" ngModel />
+                    <label for="check-other4">Къса база</label>
+
+
+                </div>
+
+                <div class="check">
+
+                    <input type="checkbox" checked id="check-other5" ngModel name="other5" ngModel />
+                    <label for="check-other5">Напълно обслужен</label>
+
+                    <input type="checkbox" checked id="check-other6" ngModel name="other6" ngModel />
+                    <label for="check-other6">Сервизна книжка</label>
+
+                    
+                    <input type="checkbox" checked id="check-other7" ngModel name="other7" ngModel />
+                    <label for="check-other7">Каско</label>
+                </div>
             </div>
 
 
@@ -217,7 +248,7 @@
         </div>
 
         <button>Продължаване</button>
-    
+
     </form>
 
 
